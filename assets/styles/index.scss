@@ -1,1 +1,52 @@
 @import '~bootstrap/scss/bootstrap';
+
+html {
+
+}
+
+body {
+  background-image: url('https://images.pexels.com/photos/6966/abstract-music-rock-bw.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 533px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.box {
+  width: 30%;
+  height: 50%;
+  background-color: grey;
+  padding: 50px;
+  margin-left: 450px;
+  margin-top: 50px;
+  box-shadow: 5px 10px 8px #888888;
+  border-radius: 10px;
+}
+
+#email {
+  margin-right: 135px;
+}
+
+#password {
+  margin-right: 105px;
+}
+
+#confirmPassword {
+  margin-right: 40px;
+}
+
+#signUp {
+  margin-top: 15px;
+  margin-right: 10px;
+  border-radius: 5px;
+  outline: none;
+}
+
+.border {
+  border-radius: 5px;
+  outline: none;
+}
