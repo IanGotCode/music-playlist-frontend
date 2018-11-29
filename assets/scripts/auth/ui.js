@@ -21,6 +21,7 @@ const signUpSuccess = data => {
   $('#message').removeClass()
   $('#message').addClass('success')
   $('#sign-in').show()
+  $('#sign-up').hide()
   // console.log('signUpSuccess ran. Data is :', data)
 }
 
