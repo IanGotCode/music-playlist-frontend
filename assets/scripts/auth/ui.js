@@ -76,8 +76,6 @@ const signOutSuccess = data => {
   $('#sign-in').show()
   $('#sign-up').hide()
   $('#sign-out').hide()
-  $('.game-board').hide()
-  $('.resetTwo').hide()
   // console.log('signOut ran. Data is :', data)
 }
 
