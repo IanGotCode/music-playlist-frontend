@@ -2,10 +2,18 @@
 
 const store = require('../store.js')
 
+const onSwitch = function () {
+  $('#sign-in').toggle()
+  $('#sign-up').toggle()
+  // $('#sign-up2').toggle()
+}
+
+
 const signUpSuccess = data => {
   $('#message').text('Signed up successfully')
   $('#message').removeClass()
   $('#message').addClass('success')
+  $('#sign-in').show()
   // console.log('signUpSuccess ran. Data is :', data)
 }
 
@@ -57,7 +65,7 @@ const signOutSuccess = data => {
   $('#message').addClass('success')
   $('#change-password').hide()
   $('#sign-in').show()
-  $('#sign-up').show()
+  $('#sign-up').hide()
   $('#sign-out').hide()
   $('.game-board').hide()
   $('.resetTwo').hide()
@@ -79,5 +87,6 @@ module.exports = {
   changePasswordSuccess,
   changePasswordFailure,
   signOutSuccess,
-  signOutFailure
+  signOutFailure,
+  onSwitch
 }

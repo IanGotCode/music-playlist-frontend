@@ -39,9 +39,9 @@ h1 {
   margin-right: 40px;
 }
 
-#signUp {
-  margin-top: 15px;
-  margin-right: 10px;
+.signup {
+  margin-top: 5px;
+  margin-right: 8px;
   border-radius: 5px;
   outline: none;
 }
@@ -49,4 +49,24 @@ h1 {
 .border {
   border-radius: 5px;
   outline: none;
+}
+
+#sign-out {
+  display: none;
+}
+
+#sign-up2 {
+  margin-top: 8px;
+}
+
+#sign-in {
+  display: none;
+}
+
+.sign-in {
+  margin-top: 7px;
+}
+
+.switch {
+  margin-top: 4px;
 }

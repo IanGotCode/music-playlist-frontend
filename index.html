@@ -1,42 +1,53 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Example</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<head>
+  <title>Example</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body>
-      <h1>Music Playlist</h1>
-      <div class="text-center box">
-        <form method="post">
-          <div id='email'>
-            Email:
-          </div>
-            <input class='border' type="text" placeholder="email">
-            <br>
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
-          <div id='password'>
-            Password:
-          </div>
-            <input class='border' type="text" placeholder="password">
-            <br>
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
 
-          <div id='confirmPassword'>
-            Confirm Password:
-          </div>
-            <input class='border' type="text" placeholder="confirm password">
-            <br>
+<body>
+  <h1>Music Playlist</h1>
+  <div class="text-center box container-fluid">
+    <div class="row">
+      <div class="col">
+        <form id="sign-up" class="border">
+          <fieldset>
+            <legend>Sign Up!</legend>
+            <input type="text" name="credentials[email]" placeholder="Email">
+            <input type="password" name="credentials[password]" placeholder="Password">
+            <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+          </fieldset>
+          <input type="submit" value="Sign Up" class="btn btn-success signup">
+          <input type="button" value="Sign In" class="btn btn-success switch">
+        </form>
 
-          <div>
-          <button id='signUp' type="button" name="button">Sign-Up</button>
-          </div>
+
+        <form id="sign-in" class="border">
+          <fieldset>
+            <legend>Sign In!</legend>
+            <input type="text" name="credentials[email]" placeholder="Email">
+            <input type="password" name="credentials[password]" placeholder="Password">
+          </fieldset>
+          <input type="submit" value="Sign In" class="btn btn-success sign-in">
+          <input type="button" value="Sign Up" id="sign-up2" class="btn btn-success switch">
+        </form>
+        <form id="sign-out" class="border">
+          <fieldset>
+            <legend>Sign Out!</legend>
+            <input type="submit" value="Sign Out" class="btn btn-danger">
+          </fieldset>
         </form>
       </div>
-    </body>
+    </div>
+  </div>
+</body>
+
 </html>
