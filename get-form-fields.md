@@ -31,6 +31,7 @@ $('#create-book').on('submit', function (event) {
 })
 ```
 
+
 Then, the `bookData` variable would look like this:
 
 ```js

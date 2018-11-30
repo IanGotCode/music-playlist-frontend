@@ -41,9 +41,45 @@ const signOut = data => {
   })
 }
 
+const onCreateMusics = data => {
+  return $.ajax({
+    url: config.apiUrl + '/musics',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    method: 'POST',
+    data
+  })
+}
+
+const onEditMusics = (data, id) => {
+  console.log(data)
+  return $.ajax({
+    url: config.apiUrl + '/musics/' + id,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    method: 'PATCH',
+    data
+  })
+}
+
+const onShowMusics = () => {
+  return $.ajax({
+    url: config.apiUrl + '/musics',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    method: 'GET'
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   changePassword,
-  signOut
+  signOut,
+  onCreateMusics,
+  onEditMusics,
+  onShowMusics
 }

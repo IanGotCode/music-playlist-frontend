@@ -41,9 +41,42 @@ const onSignOut = event => {
   $(event.target).trigger('reset')
 }
 
+const createMusic = function (event) {
+  event.preventDefault()
+
+  const form = event.target
+  const musicData = getFormFields(form)
+  api.onCreateMusics(musicData)
+    .then(ui.onCreateMusicsSuccess)
+    .catch(ui.onCreateMusicsFailure)
+}
+
+const editMusic = function (event) {
+  event.preventDefault()
+
+  const form = event.target
+  const musicData = getFormFields(form)
+  api.onEditMusics(musicData)
+    .then(ui.onEditMusicsSuccess)
+    .catch(ui.onEditMusicsFailure)
+}
+
+const showMusic = function (event) {
+  event.preventDefault()
+
+  const form = event.target
+  const musicData = getFormFields(form)
+  api.onShowMusics(musicData)
+    .then(ui.onShowMusicsSuccess)
+    .catch(ui.onShowMusicsFailure)
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
   onChangePassword,
-  onSignOut
+  onSignOut,
+  createMusic,
+  editMusic,
+  showMusic
 }

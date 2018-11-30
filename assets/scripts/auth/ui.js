@@ -13,6 +13,7 @@ const onSwitch2 = function () {
   $('#sign-in').hide()
   $('#sign-up').hide()
   $('#change-password').show()
+  $('#music').hide()
 }
 
 
@@ -22,6 +23,8 @@ const signUpSuccess = data => {
   $('#message').addClass('success')
   $('#sign-in').show()
   $('#sign-up').hide()
+  $('#signout').show()
+  // $('#signout').show()
   // console.log('signUpSuccess ran. Data is :', data)
 }
 
@@ -37,11 +40,12 @@ const signInSuccess = data => {
   $('#message').text('Signed in successfully')
   $('#message').removeClass()
   $('#message').addClass('success')
-  $('#sign-out').show()
+  $('.signout').show()
   $('#sign-up').hide()
   $('#sign-in').hide()
   $('#change-password').hide()
-  $('.resetTwo').show()
+  $('#change-password2').show()
+  $('#music').show()
   // console.log('signInSuccess ran. Data is :', data)
 }
 
@@ -58,6 +62,8 @@ const changePasswordSuccess = data => {
   $('#message').addClass('success')
   $('#sign-in').show()
   $('#change-password').hide()
+  $('.signout').hide()
+  $('#music').hide()
   // console.log('changePasswordSuccess ran. Data is :', data)
 }
 
@@ -73,10 +79,12 @@ const signOutSuccess = data => {
   store.user = null
   $('#message').removeClass()
   $('#message').addClass('success')
+  $('#change-password2').hide()
   $('#change-password').hide()
   $('#sign-in').show()
   $('#sign-up').hide()
-  $('#sign-out').hide()
+  $('.signout').hide()
+  $('#music').hide()
   // console.log('signOut ran. Data is :', data)
 }
 
@@ -85,6 +93,47 @@ const signOutFailure = error => {
   $('#message').removeClass()
   $('#message').addClass('failure')
   // console.error('singOut ran. Error is :', error)
+}
+
+const onCreateMusicsSuccess = data => {
+  console.log('created successfully')
+}
+
+const onCreateMusicsFailure = error => {
+  console.log('created bad', error)
+}
+
+const onShowMusicsSuccess = data => {
+  data.musics.forEach(music => {
+    $('.musicOutput').append(`
+      <div class=${music.id}>
+      <h4 id=${music.id}>${music.id}</h4>
+      </div>`)
+    $(`#${music.id}`).css('color', '#01499E')
+    for (const key in music) {
+      if (key !== 'id' && key !== 'user') {
+        $(`.${music.id}`).append(`<h6>${key}: ${music[key]}</h6>`)
+        $(`.${music.id}`).css('border', '3px solid black')
+        $(`.${music.id}`).css('background', 'rgba(35, 10, 165, 0.8)')
+        $(`.${music.id}`).css('box-shadow', '0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24)')
+        $(`.${music.id}`).css('margin', '4px')
+      }
+    }
+  })
+}
+
+const onShowMusicsFailure = error => {
+  console.log('created bad', error)
+}
+
+const editOpen = data => {
+  $('.two').show()
+  $('.one').hide()
+}
+
+const open = data => {
+  $('.two').hide()
+  $('.one').show()
 }
 
 module.exports = {
@@ -97,5 +146,11 @@ module.exports = {
   signOutSuccess,
   signOutFailure,
   onSwitch,
-  onSwitch2
+  onSwitch2,
+  onCreateMusicsSuccess,
+  onCreateMusicsFailure,
+  onShowMusicsSuccess,
+  onShowMusicsFailure,
+  editOpen,
+  open
 }
