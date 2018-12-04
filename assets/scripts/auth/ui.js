@@ -64,7 +64,7 @@ const changePasswordSuccess = data => {
   $('#sign-in').show()
   $('#change-password').hide()
   $('.signout').hide()
-  $('#music').hide()
+  $('#create-music').hide()
   // console.log('changePasswordSuccess ran. Data is :', data)
 }
 
@@ -85,7 +85,7 @@ const signOutSuccess = data => {
   $('#sign-in').show()
   $('#sign-up').hide()
   $('.signout').hide()
-  $('#music').hide()
+  $('#create-music').hide()
   // console.log('signOut ran. Data is :', data)
 }
 
