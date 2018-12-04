@@ -92,11 +92,19 @@ h1 {
   text-align: center;
 }
 
-#music {
+#create-music {
   display: none;
 }
 
 .musicOutput {
   width: 300px;
   height: 300px;
+}
+
+#editBtn {
+  display: none;
+}
+
+#show {
+  display: none;
 }

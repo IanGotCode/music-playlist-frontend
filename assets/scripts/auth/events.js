@@ -43,32 +43,33 @@ const onSignOut = event => {
 
 const createMusic = function (event) {
   event.preventDefault()
-
+  console.log('This does not work')
   const form = event.target
   const musicData = getFormFields(form)
   api.onCreateMusics(musicData)
     .then(ui.onCreateMusicsSuccess)
     .catch(ui.onCreateMusicsFailure)
+  $(event.target).trigger('reset')
 }
 
 const editMusic = function (event) {
   event.preventDefault()
-
   const form = event.target
   const musicData = getFormFields(form)
   api.onEditMusics(musicData)
     .then(ui.onEditMusicsSuccess)
     .catch(ui.onEditMusicsFailure)
+  $(event.target).trigger('reset')
 }
 
 const showMusic = function (event) {
   event.preventDefault()
-
   const form = event.target
   const musicData = getFormFields(form)
   api.onShowMusics(musicData)
     .then(ui.onShowMusicsSuccess)
     .catch(ui.onShowMusicsFailure)
+  $(event.target).trigger('reset')
 }
 
 module.exports = {

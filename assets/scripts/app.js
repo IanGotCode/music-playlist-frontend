@@ -20,4 +20,5 @@ $(() => {
   $('#show').on('click', authEvents.showMusic)
   $('#edit2').on('click', uiEvents.editOpen)
   $('.createTog').on('click', uiEvents.open)
+  $('#create-music').on('submit', authEvents.createMusic)
 })

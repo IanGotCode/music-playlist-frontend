@@ -45,7 +45,8 @@ const signInSuccess = data => {
   $('#sign-in').hide()
   $('#change-password').hide()
   $('#change-password2').show()
-  $('#music').show()
+  $('#create-music').show()
+  $('#show').show()
   // console.log('signInSuccess ran. Data is :', data)
 }
 
@@ -97,6 +98,7 @@ const signOutFailure = error => {
 
 const onCreateMusicsSuccess = data => {
   console.log('created successfully')
+  $('#message').text('Music Created Successfully.')
 }
 
 const onCreateMusicsFailure = error => {
