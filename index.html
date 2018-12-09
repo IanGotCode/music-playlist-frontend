@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Example</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+  <h1>Music Playlist</h1>
+  <h5 id="message"></h5>
+  <div class="text-center box container-fluid">
+    <div class="row">
+      <div class="col">
+        <form id="sign-up" class="border">
+          <fieldset>
+            <legend>Sign Up!</legend>
+            <input type="text" name="credentials[email]" placeholder="Email">
+            <input type="password" name="credentials[password]" placeholder="Password">
+            <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+          </fieldset>
+          <input type="submit" value="Sign Up" class="btn btn-success signup">
+          <input type="button" value="Sign In" class="btn btn-success switch">
+        </form>
+
+        <form id="sign-in" class="border">
+          <fieldset>
+            <legend>Sign In!</legend>
+            <input type="text" name="credentials[email]" placeholder="Email">
+            <input type="password" name="credentials[password]" placeholder="Password">
+          </fieldset>
+          <input type="submit" value="Sign In" class="btn btn-success sign-in">
+          <input type="button" value="Sign Up" id="sign-up2" class="btn btn-success switch">
+        </form>
+
+        <form id="change-password" class="border">
+          <fieldset>
+            <legend>Change Password!</legend>
+            <input type="password" name="passwords[old]" placeholder="Old Password">
+            <input type="password" name="passwords[new]" placeholder="New Password">
+            <input type="submit" value="Change Password" class="btn btn-danger">
+          </fieldset>
+        </form>
+
+        <form id="create-music" class="border">
+          <fieldset>
+            <legend>Music Playlist</legend>
+            <input type="text" name="music[artist_name]" placeholder="enter artist">
+            <input type="text" name="music[track_name]" placeholder="enter track">
+            <input type="submit" name="create" value="Create" class="btn btn-success createBtn">
+          </fieldset>
+        </form>
+        <form id="edit-music" class="border">
+          <fieldset>
+            <legend>Music Playlist</legend>
+            <input type="text" name="music[artist_name]" placeholder="enter artist">
+            <input type="text" name="music[track_name]" placeholder="enter track">
+            <input type="text" name="music[id]" placeholder="id">
+            <input type="submit" name="create" value="Edit" class="btn btn-success createBtn">
+          </fieldset>
+          <input type="submit" name="edit" value="Edit" class="btn btn-secondary">
+          <input type="submit" name="delete" value="Delete" class="btn btn-danger">
+        </form>
+        <form class='signout'>
+          <input type="submit" value="Sign Out" class="btn btn-danger signout">
+        </form>
+        <input type="button" value="Change Password" id='change-password2' class="btn btn-danger switch2">
+        <input type="button" value="Show Music" id='show' class="btn btn-danger">
+      </div>
+    </div>
+  </div>
+</body>
+  <div class="musicOutput">
+
+  </div>
+</html>
